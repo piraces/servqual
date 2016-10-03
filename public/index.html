@@ -3,10 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<title>SERVQUAL</title>
 </head>
 
 <body>
-    <div ng-app="servqualApp" ng-controller="mainController">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">SERVQUAL</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Survey </a></li>
+        <li ><a href="results.html">Global results</a></li>
+
+      </ul>
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <div ng-app="servqualApp" ng-controller="mainController" style="padding-left:3%; padding-right:3%;">
 
         <h1> eBay SERVQUAL </h1>
         <h3> Raúl Piracés and Ismael Rodríguez </h3>
@@ -16,10 +39,10 @@
           <li><b>Perceptions:</b> Here, we are interested in a number that shows your perceptions about eBay</li>
         </ul>
         <h2>Please fill the gaps with a number from 1 to 7</h2>
-        <table border="1" ng-if="!resultCalculated">
+        <table border="1" ng-if="!resultCalculated" class="table table-bordered" >
 
 
-            <tr>
+            <tr class="success">
                 <th>Question</th>
                 <th>E</th>
                 <th>Question</th>
@@ -28,7 +51,7 @@
 
             <!-- Tangibles -->
             <tr>
-                <th colspan="4">Tangibles</th>
+                <th colspan="4" class="info">Tangibles</th>
             </tr>
             <tr>
                 <td>Website will be fast and responsive</td>
@@ -57,7 +80,7 @@
 
             <!-- Reliability -->
             <tr>
-                <th colspan="4">Reliability</th>
+                <th colspan="4" class="info">Reliability</th>
             </tr>
             <tr>
                 <td>When a customer has a problem, auction websites will show a sincere interest in solving it</td>
@@ -84,16 +107,16 @@
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.reliability[3]"></td>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Auction websites will not take important decissions on the users' behalf without informing them</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.reliability[4]"></td>
-                <td>---</td>
+                <td>eBay doesn't take important decissions on your behalf without informing you</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.reliability[4]"></td>
             </tr>
 
 
             <!-- Responsiveness -->
             <tr>
-                <th colspan="4">Responsiveness</th>
+                <th colspan="4" class="info">Responsiveness</th>
             </tr>
             <tr>
                 <td>Customer Service on auction websites will always be willing to help customers</td>
@@ -114,7 +137,7 @@
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.responsivenes[2]"></td>
             </tr>
             <tr>
-                <td>Customer Service of auction websites will tell customrs exactly when services will be performed</td>
+                <td>Customer Service of auction websites will tell customers exactly when services will be performed</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.responsivenes[3]"></td>
                 <td>Customer Service in eBay tell you exactly when services will be performed.</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.responsivenes[3]"></td>
@@ -123,65 +146,65 @@
 
             <!-- Assurance -->
             <tr>
-                <th colspan="4">Assurance</th>
+                <th colspan="4" class="info">Assurance</th>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Customers of excellent auction webs will feel safe in transactions</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.assurance[0]"></td>
-                <td>---</td>
+                <td>You feel safe in your transactions with eBay</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.assurance[0]"></td>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Excellent auction webs will instill confidence in customers</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.assurance[1]"></td>
-                <td>---</td>
+                <td>eBay instills confidence in you</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.assurance[1]"></td>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Excellent auction webs have a  help system (FAQs) that resolves the most common customer's problems</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.assurance[2]"></td>
-                <td>---</td>
+                <td>Ebay has a  help system (FAQs) that resolves the most common customer problems</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.assurance[2]"></td>
             </tr>
             <tr>
-                <td>----</td>
-                <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.assurance[3]"></td>
-                <td>---</td>
+                <td>Customer Service of excellent auction webs will have the knowledge to answer customer's questions</td>
+                <td><input type="number" name="quantity" min="1" max="7" nag-model="expectations.assurance[3]"></td>
+                <td>Customer Service of eBay has the knowledge to answer customer's questions</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.assurance[3]"></td>
             </tr>
 
             <!-- Empathy -->
             <tr>
-                <th colspan="4">Empathy</th>
+                <th colspan="4" class="info">Empathy</th>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Excellent auction pages will give customers individual attention</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.empathy[0]"></td>
-                <td>---</td>
+                <td>eBay gives you individual attention</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.empathy[0]"></td>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Customer Service of an excellent auction page will have operating hours convenient to all their customers</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.empathy[1]"></td>
-                <td>---</td>
+                <td>eBay Customer Service has operating hours convenient to all its customers</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.empathy[1]"></td>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Customer Service of excellent auction pages will give customers personalised attention</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.empathy[2]"></td>
-                <td>---</td>
+                <td>eBay Customer Service gives you personalised attention</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.empathy[2]"></td>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Excellent auction pages will have their customer's best interests at heart</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.empathy[3]"></td>
-                <td>---</td>
+                <td>eBay has your  best interests at heart</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.empathy[3]"></td>
             </tr>
             <tr>
-                <td>----</td>
+                <td>Excellent auction pages will understand the specific needs of their customers</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="expectations.empathy[4]"></td>
-                <td>---</td>
+                <td>eBay understands your specific needs.</td>
                 <td><input type="number" name="quantity" min="1" max="7" ng-model="perceptions.empathy[4]"></td>
             </tr>
             {{firstName}}
@@ -191,7 +214,7 @@
 
         <div ng-if="resultCalculated">
             <b>YOUR RESULTS:</b>
-            <table border="1">
+            <table border="1" class="table table-bordered" >
 
                 <tr>
                     <td>Average <b>Tangible</b> SERVQUAL score</td>
@@ -222,7 +245,7 @@
             <h3>Thank you!</h3>
         </div>
 
-        <button ng-click="submit()" ng-if="!resultCalculated">Submit!</button>
+        <button type="button" class="btn btn-danger btn-lg btn-block " ng-click="submit()" ng-if="!resultCalculated" style="margin-bottom:50px;">Submit!</button>
     </div>
 
 
