@@ -8,18 +8,20 @@ var mongoose = require('mongoose'),
 // URL de conexión
 function readFromDatabaseAll(callback) {
     Result.find({}).exec(function (err, documents) {
+        var globalAverage = {
+            tangible: 0,
+            reliability: 0,
+            responsiveness: 0,
+            assurance: 0,
+            empathy: 0,
+            total: 0,
+            average: 0
+        };
         if (err){
             callback({'error': 500, 'errorDetail': 'Error en la recuperación de resultados.'});
+        } else if(documents.length == 0) {
+            callback(globalAverage);
         } else {
-            var globalAverage = {
-                tangible: 0,
-                reliability: 0,
-                responsiveness: 0,
-                assurance: 0,
-                empathy: 0,
-                total: 0,
-                average: 0
-            };
             var iterations = 0;
             documents.forEach(function(document){
                 globalAverage.tangible += document.tangible;
